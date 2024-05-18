@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines the BaseModel class."""
+import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -7,11 +8,26 @@ from datetime import datetime
 class BaseModel:
     """Base class for AirBnB project"""
 
-    def __init__(self):
-        """Initialize a new Base instance with a unique ID and timestamps."""
+    def __init__(self, *args, **kwargs):
+        """Initialize a new Base instance with a unique ID and timestamps.
+
+            Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
+        """
         self.id = str(uuid4())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
+
+        tform = "%Y-%m-%dT%H:%M:%S.%f"
+        if len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "created_at" or k == "updated_at":
+                    self.__dict__[k] = datetime.strptime(v, tform)
+                else:
+                    self.__dict__[k] = v
+        else:
+            models.storage.new(self)
 
     def save(self):
         """Updates updated_at with the current datetime"""
