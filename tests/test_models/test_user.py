@@ -5,6 +5,7 @@ Unittest classes:
     TestUser_save
     TestUser_to_dict
 """
+
 import os
 import models
 import unittest

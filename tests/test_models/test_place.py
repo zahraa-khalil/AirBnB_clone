@@ -6,6 +6,7 @@ Unittest classes:
     TestPlace_save
     TestPlace_to_dict
 """
+
 import os
 import models
 import unittest

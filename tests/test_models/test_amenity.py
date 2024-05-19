@@ -6,6 +6,7 @@ Unittest classes:
     TestAmenity_save
     TestAmenity_to_dict
 """
+
 import os
 import models
 import unittest
