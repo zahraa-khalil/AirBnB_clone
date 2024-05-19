@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define the BaseModel class"""
+"""Define the parent class BaseModel of AirBnB Project"""
 
 import models
 from uuid import uuid4
@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 class BaseModel:
-    """Base class for AirBnB project"""
+    """Represents the BaseModel of the HBnB project."""
 
     def __init__(self, *args, **kwargs):
         """Initialize a new Base instance with a unique ID and timestamps.

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define city Class"""
+"""Define city child Class"""
 
 from models.base_model import BaseModel
 
